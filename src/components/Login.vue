@@ -107,7 +107,7 @@ export default {
 
 <style>
 body{
-    background: linear-gradient(to right,#00d2ff,#3a7bd5);
+    background: linear-gradient(to right,#0077ff7c,#3a7bd573);
 }
 .images{
     filter: brightness(50%);
