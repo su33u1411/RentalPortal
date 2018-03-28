@@ -1,29 +1,51 @@
 <template>
 <div class="container">
-    <div class="card"  v-bind:style="opacity">
-        <div class="alert alert-danger" role="alert" v-if="error">
-            <strong>{{msg}}</strong>
+    <div class="row" v-bind:style="fitler">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img class="d-block w-100 images" src="../assets/House.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block text-left">
+                              <h5>Easy Management</h5>
+                              <p>Login and pay ur Rent</p>
+                          </div>
+                        </div>
+                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/House.jpg" alt="First slide"></div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+            </div>
         </div>
-        <form class="login-form">
-            <div class="form-group row">
-                <label for="username" class="col-3 col-form-label">Username</label>
-                <div class="col-9">
-                    <input class="form-control" type="text" placeholder="username" id="username" v-model="username">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 logincard jumbotron">
+        <div class="alert alert-danger" role="alert" v-if="error">
+        <strong>{{msg}}</strong>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="username" class=""></label>
+                <div>
+                <input class="form-control" type="text" placeholder="username" id="username" v-model="username">
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="password" class="col-3 col-form-label">Password</label>
-                <div class="col-9">
-                    <input class="form-control" type="password" placeholder="password" id="password" v-model="password">
-                </div>
+            <div class="form-group">
+                <label for="password" class="bmd-label-floating"></label>
+                <input class="form-control" type="password" placeholder="password" id="password" v-model="password">
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="rememberme">
-                <label class="form-check-label" for="rememberme">Remember me</label>
-            </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block active" v-on:click="login(username,password)">Login</button>
+            <button type="button" class="btn btn-lg btn-block Loginbutton" v-on:click="login(username,password)">Login</button>
             <div class="forgotpassword"><a href="">Forgot Password?</a></div> 
         </form>
+
+        </div>
     </div>
     <div id="spinner" v-if="loading">
     <spinner id="spinner-tem"></spinner>
@@ -43,8 +65,8 @@ export default {
       password:'',
       error:false,
       msg:'',
-      loading:false,
-      opacity:''
+      fitler:'',
+      loading:false
     }
   },
    components: {
@@ -53,7 +75,7 @@ export default {
   methods:{
     login (username,password) {
       this.loading = true
-      this.opacity = 'opacity: 0.3;'
+      this.fitler = 'filter:blur(5px);'
       let postdata = {'username':username,'password':password}
       let headers = {'Content-Type': 'application/json'}
       this.$http.post('https://paymyrent.herokuapp.com/api/v1/login', postdata, headers).then(response => {
@@ -69,7 +91,7 @@ export default {
           }
       },error => {
               this.loading = false
-              this.opacity = 'opacity:1;height: 380px;'
+              this.fitler = ''
               this.username = ''
               this.password = ''
               this.error = true
@@ -84,26 +106,28 @@ export default {
 </script>
 
 <style>
-.card{
-     margin:auto;
-     margin-top: 15%;
-     background-color:whitesmoke;
-     height: 300px;
-     width: 500px;
-     border-radius: 10px;
-     position: relative;
+body{
+    background: linear-gradient(to right,#00d2ff,#3a7bd5);
 }
-.login-form{
-    padding-top: 10%;
-    padding-right: 5%;
-    padding-left: 5%;
+.images{
+    filter: brightness(50%);
 }
-.btn{
-      margin-top: 5%;
+.logincard{
+    background-color: #ecf3f3;
+    height: 485px;
+    box-shadow: 0 8px 6px -6px black;
+    padding-top:100px;
 }
-
+.Loginbutton{
+    margin-top: 10%;
+    color: white;
+    background-color: #3498db;
+}
+.row{
+    margin-top:10%;
+}
 .forgotpassword{
-     margin-top: 2%;
+     margin-top: 5%;
      font-size: smaller;
 }
 a{
