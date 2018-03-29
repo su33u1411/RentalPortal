@@ -87,7 +87,7 @@ export default {
             this.$router.push({ name: 'LNav'})
           }
           if(response.body.accountType === 'tenant'){
-                this.$router.push({name: 'TNav'})
+            this.$router.push({name: 'TNav'})
           }
       },error => {
               this.loading = false
