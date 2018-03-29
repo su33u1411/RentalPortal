@@ -122,9 +122,6 @@ created: function(){
 }
 </script>
 <style>
-body{
-    background:whitesmoke;
-}
 #spinner{
     margin: auto;
     position: absolute;
