@@ -58,9 +58,6 @@ created: function(){
 }
 </script>
 <style>
-body{
-    background-color:whitesmoke;
-}
 .nav-item{
   color: white;
 }
