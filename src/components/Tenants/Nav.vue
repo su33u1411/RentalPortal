@@ -58,8 +58,8 @@ created: function(){
 }
 </script>
 <style>
-.logout{
-  margin-top:auto;
+body{
+    background-color:whitesmoke;
 }
 .nav-item{
   color: white;

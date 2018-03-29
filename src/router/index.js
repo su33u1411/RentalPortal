@@ -28,7 +28,7 @@ export default new Router({
             component: Login
         },
         {
-            path: '/user/nav',
+            path: '/user/Landlord/nav',
             name: 'LNav',
             component: LNav,
             redirect: '/user/Landlord/Home',
@@ -51,7 +51,7 @@ export default new Router({
             ]
         },
         {
-            path: '/user/nav',
+            path: '/user/Tenant/nav',
             name: 'TNav',
             component: TNav,
             redirect: '/user/Tenant/Home',

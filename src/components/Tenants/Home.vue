@@ -1,41 +1,63 @@
 <template>
 <div class="container">
-<div class="row" v-if="Home">
-      <div class="col-6 text-left board">
-      <h3>Your current balance</h3>
-      <h3>${{amount}}</h3>
-      <p>Next bill due on {{amountDate}}</p>
-      <br>
-      <button type="button" class="btn btn-lg btn-block btn btn-secondary active">Pay Now</button>
-      <button type="button" class="btn btn-lg btn-block btn-info active">Set Up Autopay</button>
-        <ul class="list-group list-group-flush mgroup">
-          <li class="list-group-item items"><h6 class="text-left">Rent <small>Due on 04/01/2018</small></h6><h6 class="value">$1,021.50</h6></li>
-          <li class="list-group-item items"><h6 class="text-left">Your Credits & Prepayments</h6><h6 class="value">$0.00</h6></li>
-          <li class="list-group-item items"><h6 class="text-left">Total Balance</h6><h6 id="TotalBalance">$1,021.50</h6></li>
-        </ul>
+<div class="row homecard" v-if="Home">
+      <div class="col-6 text-left">
+        <div class="card">
+          <div class="card-body" style="margin:10px;">
+            <h5 class="card-title">Your current balance : ${{amount}}</h5>
+            <p class="card-text">Next bill due on {{amountDate}}</p>
+            <br>
+            <button type="button" class="btn btn-lg btn-block btn btn-secondary active">Pay Now</button>
+            <button type="button" class="btn btn-lg btn-block btn-info active">Set Up Autopay</button>
+            <br>
+            <table class="table table-hover">
+              <tbody>
+               <tr>
+                 <td class="text-left"><h6>Rent <small>Due on 04/01/2018</small></h6></td>
+                 <td class="text-right">$1,021.50</td>
+               </tr>
+               <tr>
+                 <td class="text-left"><h6>Your Credits & Prepayments</h6></td>
+                 <td class="text-right">$0.00</td>
+               </tr>
+               <tr>
+                 <td class="text-left"><h6>Total Balance</h6></td>
+                 <td class="text-right">$1,021.50</td>
+               </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   <div class="col-5">
-    <div class="list-group mgroup2">
-      <a class="list-group-item Sitems list-group-item-action flex-column align-items-start">
-        <h5 class="text-left">Notification :</h5>
-        <small>nothing to show</small>
+      <a>
+        <div class="card text-left">
+          <div class="card-header">Address</div>
+          <div class="card-body">
+            <p class="text-left">{{addressLine1}}<br>{{addressLine2}}<br>{{city}}<br>{{state}}-{{zip}}</p>
+          </div>
+        </div>
       </a>
-      <a class="list-group-item Sitems list-group-item-action flex-column align-items-start">
-        <h5 class="text-left">Address :</h5>
-        <p class="text-left">{{addressLine1}}<br>{{addressLine2}}<br>{{city}}<br>{{state}}-{{zip}}</p>
+      <br>
+      <a>
+        <div class="card text-left">
+          <div class="card-header">Maintenance Requests</div>
+          <div class="card-body">
+            <p class="card-text">You can request a new maintenance request.</p>
+            <button type="button" class="btn btn-sm btn-block btn-success active">Request Maintenance</button>
+          </div>
+        </div>
       </a>
-      <a class="list-group-item Sitems list-group-item-action flex-column align-items-start">
-        <h5 class="text-left">Maintenance Requests :</h5>
-        <button type="button" class="btn btn-sm btn-block btn-success active">Request Maintenance</button>
+      <br>
+      <a>
+        <div class="card text-left">
+          <div class="card-header">Qucik Documents</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="#">Rent Recipt : (02/03/2018)</a></li>
+            <li class="list-group-item"><a href="#">Lease Document</a></li>
+          </ul>
+        </div>
       </a>
-      <a class="list-group-item Sitems list-group-item-action flex-column align-items-start">
-        <h5 class="text-left">Qucik Documents :</h5>
-        <ul class="list-group text-left">
-          <li class="list-group-item"><a href="#">Rent Recipt : (02/03/2018)</a></li>
-          <li class="list-group-item"><a href="#">Lease Document</a></li>
-        </ul>
-      </a>
-    </div>
   </div>
 </div>
 <div id="spinner" v-if="loading">
@@ -65,12 +87,6 @@ export default {
      }
   },
 methods:{
-  hideHome(){
-    this.Home = false
-  },
-  showHome(){
-    this.Home = true
-  },
     getTenatDetails(){
       this.loading = true
       this.opacity = 'opacity: 0.3;'
@@ -106,6 +122,9 @@ created: function(){
 }
 </script>
 <style>
+body{
+    background:whitesmoke;
+}
 #spinner{
     margin: auto;
     position: absolute;
@@ -124,29 +143,7 @@ created: function(){
 .value{
   padding-left: 110px;
 }
-.logout{
-  margin-top:auto;
-}
-.Sitems{
-  padding: 20px;
-  border-width: thin;
-}
-.mgroup2{
-  margin-top: 30px;
-}
-.items{
-  height: 65px;
-  border-width: thin;
-}
-.mgroup{
-  margin-top: 25px;
-}
-.board{
-  margin: 30px;
-  border:lightgray;
-  border-style:solid;
-  border-width: thin;
-  border-radius: 10px;
-  padding: 30px;
+.homecard{
+  margin: 20px;
 }
 </style>
