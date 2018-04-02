@@ -1,11 +1,9 @@
 <template>
 <div>
- <h3 class="text-left">Welcome {{uname}}</h3>
- <hr>
-<div class="row">
-      <div class="col text-left">
-        <div class="card">
-          <div class="card-body" style="margin:10px;">
+   <br>
+   <h3 class="text-left">Welcome {{uname}}</h3><hr>
+   <div class="card">
+          <div class="card-body">
             <h5 class="card-title">Your current balance : ${{amount}}</h5>
             <p class="card-text">Next bill due on {{amountDate}}</p>
             <br>
@@ -29,38 +27,20 @@
               </tbody>
           </table>
         </div>
-      </div>
-    </div>
-</div>
-    <br>
-  <div class="row">
-      <div class="col-6">
-      <a>
-        <div class="card text-left">
-          <div class="card-header">Address</div>
-          <div class="card-body">
-            <p class="text-left">{{addressLine1}}<br>{{addressLine2}}<br>{{city}}<br>{{state}}-{{zip}}</p>
-          </div>
-        </div>
-      </a>
-      </div>
-      <br>
-      <div class="col-6">
-      <a>
-        <div class="card text-left">
-          <div class="card-header">Maintenance Requests</div>
-          <div class="card-body">
-            <p class="card-text">You can request a new maintenance request.</p>
-            <button type="button" class="btn btn-sm btn-block btn-success active">Request Maintenance</button>
-          </div>
-        </div>
-      </a>
-      </div>
-      <br>
   </div>
-<div id="spinner" v-if="loading">
-    <spinner id="spinner-tem"></spinner>
-</div>
+  <div class="card text-left">
+      <div class="card-header">Address</div>
+      <div class="card-body">
+       <p class="text-left">{{addressLine1}}<br>{{addressLine2}}<br>{{city}}<br>{{state}}-{{zip}}</p>
+      </div>
+  </div>
+  <div class="card text-left">
+      <div class="card-header">Maintenance Requests</div>
+      <div class="card-body">
+        <p class="card-text">You can request a new maintenance request.</p>
+        <button type="button" class="btn btn-sm btn-block btn-success active">Request Maintenance</button>
+      </div>
+  </div>
 </div>
 </template>
 <script>
@@ -107,6 +87,9 @@ methods:{
   components: {
     spinner
   },
+  mounted:function(){
+    
+  },
 created: function(){
       this.uname = this.$localStorage.get('username')
       if(this.uname===null){
@@ -130,5 +113,8 @@ created: function(){
 #spinner-tem{
     margin: auto;
     margin-top: 25%;
+}
+.card{
+  margin-bottom:1%;
 }
 </style>
