@@ -1,26 +1,32 @@
 <template>
-<div class="container">
- <div class="PropertiesTable text-left">
- <h5 class="label"><strong>Properties List:</strong><span><hr><a href="#" class="btn btn-sm btn-outline-primary" id="addProperty"><strong>add property</strong></a></span></h5>
-<canvas></canvas>
-<table class="table table-hover table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Property Name</th>
-      <th scope="col">Property Address</th>
-      <th scope="col">Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="(row,index) in properties" v-bind:key="index">
-      <th scope="row">{{index+1}}</th>
-      <td>{{row.propertyname}}</td>
-      <td>{{row.propertyaddress.addressline1}},<br>{{row.propertyaddress.addressline2}},<br>{{row.propertyaddress.city}},<br>{{row.propertyaddress.state}}-{{row.propertyaddress.zipcode}}.</td>
-      <td><button type="button" class="btn btn-link" v-on:click="getUnitDetails(row.propertyID)">Show Details</button></td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <br>
+   <h3 class="text-left">Welcome {{uname}}</h3><hr>
+    <div class="card text-left">
+    <div class="card-header">
+      <h5><strong>Properties List</strong></h5>
+      <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Add Property</strong></button>
+    </div>
+    <div class="card-body">
+    <table class="table table-hover table-bordered">
+       <thead>
+         <tr>
+          <th scope="col">#</th>
+          <th scope="col">Property Name</th>
+          <th scope="col">Property Address</th>
+          <th scope="col">Details</th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(row,index) in properties" v-bind:key="index">
+            <th scope="row">{{index+1}}</th>
+            <td>{{row.propertyname}}</td>
+            <td><small></small>{{row.propertyaddress.addressline1}},<br>{{row.propertyaddress.addressline2}},<br>{{row.propertyaddress.city}},<br>{{row.propertyaddress.state}}-{{row.propertyaddress.zipcode}}.</td>
+            <td><button type="button" v-on:click="getUnitDetails(row.propertyID)" class="btn btn-outline-dark active btn-sm"><span class="material-icons">dashboard</span>View Details</button></td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
 </div>
 <div id="spinner" v-if="loading">
     <spinner id="spinner-tem"></spinner>
@@ -96,12 +102,6 @@ created: function(){
 #spinner-tem{
     margin: auto;
     margin-top: 25%;
-}
-.PropertiesTable{
-    margin-bottom: 100px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
 }
 #addProperty{
   float: right;
