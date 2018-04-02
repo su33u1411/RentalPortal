@@ -26,7 +26,7 @@
                     </a>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 logincard jumbotron">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 logincard card">
         <div class="alert alert-danger" role="alert" v-if="error">
         <strong>{{msg}}</strong>
         </div>
@@ -107,7 +107,10 @@ export default {
 
 <style>
 body{
-    background-color: rgba(212, 213, 224, 0.699);
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .images{
     filter: brightness(50%);

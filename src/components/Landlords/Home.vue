@@ -2,6 +2,7 @@
 <div class="container">
  <div class="PropertiesTable text-left">
  <h5 class="label"><strong>Properties List:</strong><span><hr><a href="#" class="btn btn-sm btn-outline-primary" id="addProperty"><strong>add property</strong></a></span></h5>
+<canvas></canvas>
 <table class="table table-hover table-bordered">
   <thead>
     <tr>

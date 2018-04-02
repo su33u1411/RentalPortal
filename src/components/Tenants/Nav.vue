@@ -1,41 +1,31 @@
 <template>
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><strong>PMR</strong></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"><router-link to="/user/Tenant/Home" class="nav-link">Home</router-link><span class="sr-only">(current)</span></li>
-      <li class="nav-item"><router-link to="/user/Tenant/Payments" class="nav-link">Payments</router-link></li>
-      <li class="nav-item"><router-link to="/user/Tenant/Maintenance" class="nav-link">Maintenance</router-link></li>
-      <li class="nav-item"><router-link to="/user/Tenant/Documents" class="nav-link">Documents</router-link></li>
-      <li class="nav-item"><router-link to="/user/Tenant/Profile" class="nav-link">Profile</router-link></li>
-      <li class="nav-item"><router-link to="/user/Tenant/Contact" class="nav-link">Contact</router-link></li>
-    </ul>
-    <div class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello , {{uname}}</a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-       <router-link to="/" class="dropdown-item" >Logout</router-link>
-    </div>
-    </div>
+<div class="container-fluid">
+  <div class="row" id="header">
+  <nav class=" col navbar navbar-dark bg-dark">
+     <a class="navbar-brand" href="#">PMR</a>
+  </nav>
   </div>
-</nav>
-<router-view></router-view>
-<footer class="bg-dark text-white mt-4 footer">
-    <div class="container-fluid py-3">
-        <div class="row text-left">
-            <div class="col-4"><a>Appartment Name</a><br><a>717-743-7322</a><br><a>Visit Our Website · Help</a></div>
-            <div class="col-4"><a>Payments</a><br><a>Maintenance</a><br><a>Documents</a><br><a>Profile</a><br><a>Contact</a><br><a>Help</a></div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-right small align-self-end">©2018 PMR,Inc.</div>
-        </div>
-    </div>
-</footer>
-
+  <div class="row" id="middleSection">
+    <div class="col-2" id="Menu">
+      <ul class="list-group">
+        <li class="list-group-item"><router-link to="/user/Tenant/Home" class="link">Home</router-link></li>
+        <li class="list-group-item"><router-link to="/user/Tenant/Payments" class="link">Payments</router-link></li>
+        <li class="list-group-item"><router-link to="/user/Tenant/Maintenance" class="link">Maintenance</router-link></li>
+        <li class="list-group-item"><router-link to="/user/Tenant/Documents" class="link">Documents</router-link></li>
+        <li class="list-group-item"><router-link to="/user/Tenant/Profile" class="link">Profile</router-link></li>
+        <li class="list-group-item"><router-link to="/user/Tenant/Contact" class="link">Contact</router-link></li>
+        <li class="list-group-item"><router-link to="/" class="link">Logout</router-link></li>
+      </ul>
+   </div>
+   <div class="col-8" id="Routerview">
+      <router-view></router-view>
+   </div>
+  </div>
+ <div class="row">
+   <nav class="col navbar navbar-dark bg-dark" id="footer">
+  <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav>
+ </div>
 </div>
 </template>
 
@@ -58,16 +48,24 @@ created: function(){
 }
 </script>
 <style>
-.nav-item{
-  color: white;
+.link{
+  color:white;
 }
-.nav-link{
-  color: white;
+.link:hover{
+  color: whitesmoke;
 }
-.navbar{
-  height: 60px;
-}
-#navbarSupportedContent{
+#Menu{
   background-color: rgb(66, 66, 66);
+  max-height: 100%;
+}
+#Routerview{
+  margin-bottom: 10%;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 </style>
