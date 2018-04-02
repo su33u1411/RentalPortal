@@ -1,143 +1,146 @@
 <template>
-<div class="ProfileSection" v-bind:style="opacity">
+<div id="Profile" v-bind:style="opacity">
 	<div class="row">
-      <div class="col-10 personal-info text-left">
-        <h3>Personal info</h3>
+      <div class="col-6 text-left">
+        <h5>Personal info</h5>
         <hr>
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label class="col-md-3 control-label">Username:</label>
-            <div class="col-md-8">
+            <label class="col control-label">Username:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="uname" disabled>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
-            <div class="col-lg-8">
+            <label class="col control-label">First name:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="firstname">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Middle name:</label>
-            <div class="col-lg-8">
+            <label class="col control-label">Middle name:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="middlename">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
-            <div class="col-lg-8">
+            <label class="col control-label">Last name:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="lastname">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
-            <div class="col-md-8">
+            <label class="col control-label">Password:</label>
+            <div class="col">
               <input class="form-control" type="password" v-model="firstname" disabled>
             </div>
           </div>
-          <br>
-          <h6>Personal Address : </h6>
-          <br>
+        </form>
+      </div>
+      <div class="col-6 text-left">
+        <h5>Contact info</h5>
+        <hr>
+        <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label class="col-md-3 control-label">Address line 1:</label>
-            <div class="col-md-8">
+            <label class="col control-label">Email:</label>
+            <div class="col">
+              <input class="form-control" type="text" v-model="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col control-label">Home Phone:</label>
+            <div class="col">
+              <input class="form-control" type="text" v-model="hphone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col control-label">Cell Phone:</label>
+            <div class="col">
+              <input class="form-control" type="text" v-model="cphone">
+            </div>
+          </div>
+        </form>
+      </div>
+       <div class="col-6 text-left mcol">
+          <h5>Personal Address</h5>
+          <hr>
+          <div class="form-group">
+            <label class="col control-label">Address line 1:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="Paddress1">
             </div>
            </div>
             <div class="form-group">
-            <label class="col-md-3 control-label">Address line 2:</label>
-            <div class="col-md-8">
+            <label class="col control-label">Address line 2:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="Paddress2">
             </div>
           </div>
            <div class="form-row">
-            <div class="form-group">
+            <div class="form-group col-6">
               <label class="col control-label">City:</label>
               <div class="col">
               <input class="form-control" type="text" v-model="Pcity">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col">
               <label class="col control-label">State:</label>
               <div class="col">
               <input class="form-control" type="text" v-model="Pstate">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col">
               <label class="col control-label">Zip :</label>
-              <div class="col-5">
+              <div class="col">
               <input class="form-control" type="text" v-model="Pzip">
               </div>
             </div>
-           </div>
-           <br>
-          <h6>Mailling Address : </h6>
-          <br>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Address line 1:</label>
-            <div class="col-md-8">
+        </div>
+      </div>
+      <div class="col-6 text-left mcol">
+        <h5>Mailing Address</h5>
+        <hr>
+        <div class="form-group">
+            <label class="col control-label">Address line 1:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="Maddress1">
             </div>
            </div>
             <div class="form-group">
-            <label class="col-md-3 control-label">Address line 2:</label>
-            <div class="col-md-8">
+            <label class="col control-label">Address line 2:</label>
+            <div class="col">
               <input class="form-control" type="text" v-model="Maddress2">
             </div>
           </div>
            <div class="form-row">
-            <div class="form-group">
+            <div class="form-group col-6">
               <label class="col control-label">City:</label>
               <div class="col">
               <input class="form-control" type="text" v-model="Mcity">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col">
               <label class="col control-label">State:</label>
               <div class="col">
               <input class="form-control" type="text" v-model="Mstate">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col">
               <label class="col control-label">Zip :</label>
-              <div class="col-5">
+              <div class="col">
               <input class="form-control" type="text" v-model="Mzip">
               </div>
             </div>
-           </div>
-          <br>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" v-model="email">
-            </div>
           </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Home Phone:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" v-model="hphone">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Cell Phone:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" v-model="cphone">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary active" value="Save Changes">
-              <span></span>
-              <input type="reset" class="btn btn-default active" value="Cancel">
-            </div>
-          </div>
-        </form>
       </div>
-  </div>
+      <div class="col mcol">
+        <input type="button" class="btn btn-primary active butttons" value="Save Changes">
+        <input type="reset" class="btn btn-default active butttons" value="Cancel">
+      </div>
+	</div>    
   <div id="spinner" v-if="loading">
     <spinner id="spinner-tem"></spinner>
-    </div>
+  </div>
 </div>
 </template>
 <script>
@@ -213,9 +216,6 @@ export default {
 }
 </script>
 <style>
-.ProfileSection{
-  margin: 30px;
-}
 #spinner{
     margin: auto;
     position: absolute;
@@ -227,5 +227,11 @@ export default {
 #spinner-tem{
     margin: auto;
     margin-top: 25%;
+}
+.mcol{
+  padding: 2%;
+}
+.butttons{
+  float:center;
 }
 </style>
