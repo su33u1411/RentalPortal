@@ -1,8 +1,8 @@
 <template>
-<div class="container">
+<div>
   <br>
-  <div class="card">
-    <div class="card-header text-left">
+  <div class="card text-left">
+    <div class="card-header ">
       <h5><strong>Documents</strong></h5>
       <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Upload Document</strong></button>
     </div>

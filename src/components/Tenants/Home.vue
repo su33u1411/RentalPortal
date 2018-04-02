@@ -6,9 +6,9 @@
           <div class="card-body">
             <h5 class="card-title">Your current balance : ${{amount}}</h5>
             <p class="card-text">Next bill due on {{amountDate}}</p>
+            <button type="button" class="btn btn-lg btn btn-info active">Pay Now</button>
+            <button type="button" class="btn btn-lg btn-info active">Set Up Autopay</button>
             <br>
-            <button type="button" class="btn btn-lg btn-block btn btn-secondary active">Pay Now</button>
-            <button type="button" class="btn btn-lg btn-block btn-info active">Set Up Autopay</button>
             <br>
             <table class="table table-hover">
               <tbody>
@@ -38,7 +38,7 @@
       <div class="card-header">Maintenance Requests</div>
       <div class="card-body">
         <p class="card-text">You can request a new maintenance request.</p>
-        <button type="button" class="btn btn-sm btn-block btn-success active">Request Maintenance</button>
+        <button type="button" class="btn btn-sm btn-warning active">Request Maintenance</button>
       </div>
   </div>
 </div>
@@ -115,6 +115,7 @@ created: function(){
     margin-top: 25%;
 }
 .card{
-  margin-bottom:1%;
+  margin:auto;
+  margin-bottom: 1%;
 }
 </style>

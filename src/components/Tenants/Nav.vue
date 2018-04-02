@@ -72,6 +72,6 @@ created: function(){
     color: white;
 }
 #content{
-    background:white;
+    background:whitesmoke;
 }
 </style>
