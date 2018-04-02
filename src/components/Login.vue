@@ -1,9 +1,7 @@
 <template>
-<div class="container-fluid">
-
+<div class="container">
     <div class="row" v-bind:style="fitler" id="Content">
-       
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <div class="col-8">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -28,8 +26,8 @@
                     </a>
             </div>
         </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 logincard card">
+        <div class="col-4 card">
+        <div class="logincard">
         <div class="alert alert-danger" role="alert" v-if="error">
         <strong>{{msg}}</strong>
         </div>
@@ -45,6 +43,7 @@
             <button type="button" class="btn btn-lg btn-block Loginbutton" v-on:click="login(username,password)">Login</button>
             <div class="forgotpassword"><a href="">Forgot Password?</a></div> 
         </form>
+        </div>
         </div>
     </div>
 
@@ -114,17 +113,17 @@ body{
     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #Content{
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-top:auto;
 }
 .images{
     filter: brightness(50%);
 }
 .logincard{
-    background-color: #ecf3f3;
-    height: 485px;
-    box-shadow: 0 8px 6px -6px black;
-    padding-top:100px;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+.container{
+     margin-top: 10%;
 }
 .Loginbutton{
     margin-top: 10%;
