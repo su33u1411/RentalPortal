@@ -1,8 +1,8 @@
 <template>
- <div class="container">
+ <div>
   <br>
-  <div class="card text-center">
-          <div class="card-header text-left"><h5><strong>Payment Options</strong></h5></div>
+  <div class="card text-left">
+          <div class="card-header"><h5><strong>Payment Options</strong></h5></div>
           <div class="card-body">
             <p class="card-text">Please choose any following payment option.</p>
             <button type="submit" class="btn btn-lg btn-outline-primary"><strong>Bank Account</strong></button>

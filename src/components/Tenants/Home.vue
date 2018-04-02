@@ -1,7 +1,9 @@
 <template>
-<div class="container">
-<div class="row homecard" v-if="Home">
-      <div class="col-6 text-left">
+<div>
+ <h3 class="text-left">Welcome {{uname}}</h3>
+ <hr>
+<div class="row">
+      <div class="col text-left">
         <div class="card">
           <div class="card-body" style="margin:10px;">
             <h5 class="card-title">Your current balance : ${{amount}}</h5>
@@ -29,7 +31,10 @@
         </div>
       </div>
     </div>
-  <div class="col-5">
+</div>
+    <br>
+  <div class="row">
+      <div class="col-6">
       <a>
         <div class="card text-left">
           <div class="card-header">Address</div>
@@ -38,7 +43,9 @@
           </div>
         </div>
       </a>
+      </div>
       <br>
+      <div class="col-6">
       <a>
         <div class="card text-left">
           <div class="card-header">Maintenance Requests</div>
@@ -48,18 +55,9 @@
           </div>
         </div>
       </a>
+      </div>
       <br>
-      <a>
-        <div class="card text-left">
-          <div class="card-header">Qucik Documents</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="#">Rent Recipt : (02/03/2018)</a></li>
-            <li class="list-group-item"><a href="#">Lease Document</a></li>
-          </ul>
-        </div>
-      </a>
   </div>
-</div>
 <div id="spinner" v-if="loading">
     <spinner id="spinner-tem"></spinner>
 </div>
@@ -74,7 +72,6 @@ export default {
   data () {
      return{
        uname:'',
-       Home:true,
        loading:false,
        opacity:'',
        amount:'',
@@ -133,14 +130,5 @@ created: function(){
 #spinner-tem{
     margin: auto;
     margin-top: 25%;
-}
-#TotalBalance{
-   padding-left: 200px;
-}
-.value{
-  padding-left: 110px;
-}
-.homecard{
-  margin: 20px;
 }
 </style>
