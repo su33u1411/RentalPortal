@@ -5,8 +5,8 @@
           <div class="card-header"><h5><strong>Payment Options</strong></h5></div>
           <div class="card-body">
             <p class="card-text">Please choose any following payment option.</p>
-            <button type="submit" class="btn btn-lg btn-outline-primary"><strong>Bank Account</strong></button>
-            <button type="submit" class="btn btn-lg btn-outline-primary"><strong>Credit Card</strong></button>
+            <button type="submit" class="btn btn-sm btn-outline-primary active"><strong>Bank Account</strong></button>
+            <button type="submit" class="btn btn-sm btn-outline-primary active"><strong>Credit Card</strong></button>
           </div>
   </div>
   <br>
