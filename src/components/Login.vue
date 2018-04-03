@@ -112,7 +112,7 @@ export default {
 
 <style>
 body{
-    background-image: url("../assets/bg-01.jpg");
+    background-image: url("../assets/background.jpg");
 }
 #Content{
     margin-top:auto;
