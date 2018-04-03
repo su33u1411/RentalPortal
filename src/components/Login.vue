@@ -16,7 +16,6 @@
                           </div>
                         </div>
                         <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image2.jpg" alt="First slide"></div>
-                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image1.jpg" alt="First slide"></div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
