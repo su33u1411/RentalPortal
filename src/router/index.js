@@ -8,7 +8,7 @@ import AProfile from '@/components/Admin/Profile'
 import LNav from '@/components/Landlords/Nav'
 import LHome from '@/components/Landlords/Home'
 import LProfile from '@/components/Landlords/Profile'
-import Fulldetails from '@/components/Landlords/Fulldetails'
+import Unitdetails from '@/components/Landlords/Unitdetails'
 import TNav from '@/components/Tenants/Nav'
 import THome from '@/components/Tenants/Home'
 import TProfile from '@/components/Tenants/Profile'
@@ -44,9 +44,9 @@ export default new Router({
                     component: LProfile
                 },
                 {
-                    path: '/user/Landlord/Fulldetails',
-                    name: 'Fulldetails',
-                    component: Fulldetails
+                    path: '/user/Landlord/Unitdetails',
+                    name: 'Unitdetails',
+                    component: Unitdetails
                 }
             ]
         },

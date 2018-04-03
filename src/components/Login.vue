@@ -6,15 +6,17 @@
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img class="d-block w-100 images" src="../assets/House.jpg" alt="First slide">
+                        <div class="carousel-item active"><img class="d-block w-100 images" src="../assets/image3.jpg" alt="First slide">
                           <div class="carousel-caption d-none d-md-block text-left">
                               <h5>Easy Management</h5>
-                              <p>Login and pay ur Rent</p>
+                              <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
                           </div>
                         </div>
-                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/House.jpg" alt="First slide"></div>
+                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image2.jpg" alt="First slide"></div>
+                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image1.jpg" alt="First slide"></div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -31,14 +33,16 @@
         <div class="alert alert-danger" role="alert" v-if="error">
         <strong>{{msg}}</strong>
         </div>
-        <form>
+        <form class="text-left">
             <div class="form-group">
-                <label for="username" class="bmd-label-floating"></label>
-                <input class="form-control" type="text" placeholder="username" id="username" v-model="username">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" placeholder="Enter your username" id="username" v-model="username">
+                <small class="form-text text-muted">Username cannot be empty</small>
             </div>
             <div class="form-group">
-                <label for="password" class="bmd-label-floating"></label>
-                <input class="form-control" type="password" placeholder="password" id="password" v-model="password">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" placeholder="Password goes here" id="password" v-model="password">
+                <small class="form-text text-muted">Password cannot be empty</small>
             </div>
             <button type="button" class="btn btn-lg btn-block Loginbutton" v-on:click="login(username,password)">Login</button>
             <div class="forgotpassword"><a href="">Forgot Password?</a></div> 
@@ -108,19 +112,18 @@ export default {
 
 <style>
 body{
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url("../assets/bg-01.jpg");
 }
 #Content{
     margin-top:auto;
 }
 .images{
-    filter: brightness(50%);
+    height: 500px;
+    filter: brightness(30%);
 }
 .logincard{
-    margin-top:auto;
-    margin-bottom:auto;
+    height: 500px;
+    padding-top: 25%;
 }
 .container{
      margin-top: 10%;

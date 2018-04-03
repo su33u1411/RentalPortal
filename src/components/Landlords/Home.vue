@@ -2,10 +2,58 @@
 <div>
   <br>
    <h3 class="text-left">Welcome {{uname}}</h3><hr>
-    <div class="card text-left">
+    <div class="col-12 card text-left">
     <div class="card-header">
       <h5><strong>Properties List</strong></h5>
-      <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Add Property</strong></button>
+      <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;" data-toggle="modal" data-target=".bd-example-modal-lg"><strong>Add Property</strong></button>
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content jumbotron">
+            <h3>Create property</h3>
+            <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
+            <hr>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+                <div class="form-group col-6">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+                  <div class="form-group col-6">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                    <div class="form-group col-4">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-4">
+                      <label for="inputState">State</label>
+                      <input type="text" class="form-control" id="inputState">
+                    </div>
+                    <div class="form-group col-4">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" class="form-control" id="inputZip">
+                    </div>
+                  <div class="form-group col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">I would like to add new property</label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary active">Create</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="card-body">
     <table class="table table-hover table-bordered">
@@ -22,11 +70,11 @@
             <th scope="row">{{index+1}}</th>
             <td>{{row.propertyname}}</td>
             <td><small></small>{{row.propertyaddress.addressline1}},<br>{{row.propertyaddress.addressline2}},<br>{{row.propertyaddress.city}},<br>{{row.propertyaddress.state}}-{{row.propertyaddress.zipcode}}.</td>
-            <td><button type="button" v-on:click="getUnitDetails(row.propertyID)" class="btn btn-outline-dark active btn-sm"><span class="material-icons">dashboard</span>View Details</button></td>
+            <td><button type="button" v-on:click="getUnitDetails(row.propertyID)" class="btn btn-outline-dark">View Details</button></td>
           </tr>
         </tbody>
     </table>
-    </div>
+  </div>
 </div>
 <div id="spinner" v-if="loading">
     <spinner id="spinner-tem"></spinner>
@@ -77,7 +125,7 @@ methods:{
       },error => {})
      },
      getUnitDetails(propertyID){
-        this.$router.push({ path: '/user/Landlord/Fulldetails',query:{data:propertyID}})
+        this.$router.push({ path: '/user/Landlord/Unitdetails',query:{data:propertyID}})
      } 
 },
 created: function(){
