@@ -15,8 +15,8 @@
                               <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
                           </div>
                         </div>
-                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image2.jpg" alt="First slide"></div>
-                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/image1.jpg" alt="First slide"></div>
+                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/relations.jpg" alt="Second slide"></div>
+                        <div class="carousel-item"><img class="d-block w-100 images" src="../assets/analytics.jpg" alt="Thrid slide"></div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -119,7 +119,7 @@ body{
 }
 .images{
     height: 500px;
-    filter: brightness(30%);
+    filter: brightness(50%);
 }
 .logincard{
     height: 500px;
