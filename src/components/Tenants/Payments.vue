@@ -10,7 +10,7 @@
           </div>
   </div>
   <br>
-  <div class="card">
+    <div class="card text-left">
     <div class="card-header text-left"><h5><strong>Payment History</strong></h5></div>
      <table class="table table-hover">
        <thead>
@@ -48,7 +48,7 @@ export default {
       if(this.uname===null){
          this.$router.push({ path: '/'})
       }else{
-         
+
       }
   }
 }

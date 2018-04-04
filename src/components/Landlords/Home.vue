@@ -12,35 +12,35 @@
             <h3>Create property</h3>
             <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
             <hr>
-            <form>
+            <form id="CreatePropertyForm">
               <div class="form-row">
                 <div class="form-group col-6">
-                  <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  <label for="PName">Proptery Name</label>
+                  <input type="text" class="form-control" id="PName" placeholder="Proptery Name" v-model="PName" required>
                 </div>
                 <div class="form-group col-6">
-                  <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  <label for="PType">Proptery Type</label>
+                  <input type="text" class="form-control" id="PType" placeholder="Proptery Type" v-model="PType" required>
                 </div>
                   <div class="form-group col-6">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <label for="PAddress1">Address</label>
+                    <input type="text" class="form-control" id="PAddress1" placeholder="1234 Main St" v-model="PAddress1" required>
                   </div>
                   <div class="form-group col-6">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    <label for="PAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="PAddress2" placeholder="Apartment, studio, or floor" v-model="PAddress2" required>
                   </div>
                     <div class="form-group col-4">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity">
+                      <label for="PCity">City</label>
+                      <input type="text" class="form-control" id="PCity" v-model="PCity" required>
                     </div>
                     <div class="form-group col-4">
-                      <label for="inputState">State</label>
-                      <input type="text" class="form-control" id="inputState">
+                      <label for="PState">State</label>
+                      <input type="text" class="form-control" id="PState" v-model="PState" required>
                     </div>
                     <div class="form-group col-4">
-                      <label for="inputZip">Zip</label>
-                      <input type="text" class="form-control" id="inputZip">
+                      <label for="PZip">Zip</label>
+                      <input type="text" class="form-control" id="PZip" v-model="PZip" required>
                     </div>
                   <div class="form-group col-12">
                     <div class="form-check">
@@ -48,7 +48,7 @@
                       <label class="form-check-label" for="gridCheck">I would like to add new property</label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary active">Create</button>
+                  <button type="submit" class="btn btn-primary active" v-on:click="addProperty(PName,PType,PAddress1,PAddress2,PCity,PState,PZip)">Create</button>
               </div>
             </form>
           </div>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="card-body">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" id="Propertieslist">
        <thead>
          <tr>
           <th scope="col">#</th>
@@ -90,7 +90,14 @@ export default {
   data () {
      return{
        uname:'',
-       properties:''
+       properties:'',
+       PName:'',
+       PType:'',
+       PAddress1:'',
+       PAddress2:'',
+       PCity:'',
+       PState:'',
+       PZip:'',
      }
   },
   components: {
@@ -123,6 +130,37 @@ methods:{
        this.loading = false
        this.opacity = 'opacity: 1.0;'
       },error => {})
+     },
+      addProperty(PName,PType,PAddress1,PAddress2,PCity,PState,PZip){
+      this.loading = true
+      this.opacity = 'opacity: 0.3;'
+      let postdata = {
+          "propertyname": PName,
+          "propertytype": PType,
+          "numberofunits": "0",
+          "propertylandlord": this.uname,
+          "propertyaddress":{
+            "addressline1":PAddress1,
+            "addressline2":PAddress2,
+            "city":PCity,
+            "state":PState,
+            "zipcode":PZip
+            }
+        }
+      let headers = {'Content-Type': 'application/json'}
+      this.$http.post('https://paymyrent.herokuapp.com/api/v1/addProperty', postdata, headers).then(response => {
+       if(response.data.status=="Success"){
+       this.loading = false
+       this.opacity = 'opacity: 1.0;'
+       }
+       else{
+       this.loading = false
+       this.opacity = 'opacity: 1.0;'
+       }
+      },error => {
+       this.loading = false
+       this.opacity = 'opacity: 1.0;'
+      })
      },
      getUnitDetails(propertyID){
         this.$router.push({ path: '/user/Landlord/Unitdetails',query:{data:propertyID}})

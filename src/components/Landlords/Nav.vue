@@ -10,10 +10,6 @@
       <ul class="list-group">
         <li class="list-group-item"><i class="material-icons link">dashboard</i><router-link to="/user/Landlord/Home" class="link">Dashboard</router-link></li>
         <li class="list-group-item"><i class="material-icons link">payment</i><router-link to="/user/Landlord/Payments" class="link">Payments</router-link></li>
-        <li class="list-group-item"><i class="material-icons link">filter_list</i><router-link to="/user/Landlord/Maintenance" class="link">Maintenance</router-link></li>
-        <li class="list-group-item"><i class="material-icons link">description</i><router-link to="/user/Landlord/Documents" class="link">Documents</router-link></li>
-        <li class="list-group-item"><i class="material-icons link">account_box</i><router-link to="/user/Landlord/Profile" class="link">Profile</router-link></li>
-        <li class="list-group-item"><i class="material-icons link">local_phone</i><router-link to="/user/Landlord/Contact" class="link">Contact</router-link></li>
         <li class="list-group-item"><i class="material-icons link">lock</i><router-link to="/" class="link">Logout</router-link></li>
       </ul>
    </div>
