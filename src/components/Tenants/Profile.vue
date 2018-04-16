@@ -1,5 +1,6 @@
 <template>
 <div v-bind:style="opacity">
+  <br>
 	<div class="row">
       <div class="col-6 text-left">
         <h5>Personal info</h5>

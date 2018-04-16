@@ -2,11 +2,11 @@
 <div>
   <br>
   <div class="card text-left">
-    <div class="card-header">
-      <h5><strong>Maintenance Request History</strong></h5>
-      <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Create New Request</strong></button>
+    <div class="card-header"><h5><strong>Maintenance Request History</strong></h5>
+        <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Create New Request</strong></button>
     </div>
-     <table class="table table-hover">
+    <div class="card-body">
+     <table class="table table-striped table-bordered" id="RequestHistory">
        <thead>
          <tr>
           <th scope="col">#</th>
@@ -26,6 +26,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 </div>
 </div> 
 </template>
@@ -36,6 +37,11 @@ export default {
      return{
        uname:''
      }
+  },
+    mounted:function(){
+    $(document).ready(function() {
+      $('#RequestHistory').DataTable();
+    });
   },
      created: function(){
       this.uname = this.$localStorage.get('username')

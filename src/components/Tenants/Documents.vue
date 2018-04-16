@@ -6,7 +6,8 @@
       <h5><strong>Documents</strong></h5>
       <button type="submit" class="btn btn-sm btn-outline-primary" style="float:right;"><strong>Upload Document</strong></button>
     </div>
-     <table class="table table-hover">
+    <div class="card-body">
+     <table class="table table-hover table-bordered">
        <thead>
          <tr>
           <th scope="col">#</th>
@@ -22,6 +23,7 @@
         </tr>
       </tbody>
     </table>
+</div>
 </div>
 </div> 
 </template>
