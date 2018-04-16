@@ -133,7 +133,7 @@ body{
     color: white;
     background-color: #3498db;
 }
-.row{
+#Content{
     margin-top:10%;
 }
 .forgotpassword{

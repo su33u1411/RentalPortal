@@ -6,7 +6,7 @@
           <div class="card-body">
             <h5 class="card-title">Your current balance : ${{amount}}</h5>
             <p class="card-text">Next bill due on {{amountDate}}</p>
-            <button type="button" class="btn btn-lg btn btn-info active">Pay Now</button>
+            <button type="button" class="btn btn-lg btn btn-info active"><router-link to="/user/Tenant/Payments" class="link">Pay Now</router-link></button>
             <button type="button" class="btn btn-lg btn-info active">Set Up Autopay</button>
             <br>
             <br>
@@ -38,7 +38,55 @@
       <div class="card-header">Maintenance Requests</div>
       <div class="card-body">
         <p class="card-text">You can request a new maintenance request.</p>
-        <button type="button" class="btn btn-sm btn-warning active">Request Maintenance</button>
+        <button type="button" class="btn btn-sm btn-warning active" data-toggle="modal" data-target=".bd-example-modal-lg">Request Maintenance</button>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content jumbotron">
+            <h3>New Maintenance Request </h3>
+            <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
+            <hr>
+            <form id="CreatePropertyForm">
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label for="PName">Proptery Name</label>
+                  <input type="text" class="form-control" id="PName" placeholder="Proptery Name" v-model="PName" required>
+                </div>
+                <div class="form-group col-6">
+                  <label for="PType">Proptery Type</label>
+                  <input type="text" class="form-control" id="PType" placeholder="Proptery Type" v-model="PType" required>
+                </div>
+                  <div class="form-group col-6">
+                    <label for="PAddress1">Address</label>
+                    <input type="text" class="form-control" id="PAddress1" placeholder="1234 Main St" v-model="PAddress1" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="PAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="PAddress2" placeholder="Apartment, studio, or floor" v-model="PAddress2" required>
+                  </div>
+                    <div class="form-group col-4">
+                      <label for="PCity">City</label>
+                      <input type="text" class="form-control" id="PCity" v-model="PCity" required>
+                    </div>
+                    <div class="form-group col-4">
+                      <label for="PState">State</label>
+                      <input type="text" class="form-control" id="PState" v-model="PState" required>
+                    </div>
+                    <div class="form-group col-4">
+                      <label for="PZip">Zip</label>
+                      <input type="text" class="form-control" id="PZip" v-model="PZip" required>
+                    </div>
+                  <div class="form-group col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">I would like to add new property</label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary active" v-on:click="addProperty(PName,PType,PAddress1,PAddress2,PCity,PState,PZip)">Create</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
       </div>
   </div>
 </div>

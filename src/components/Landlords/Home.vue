@@ -56,8 +56,8 @@
       </div>
     </div>
     <div class="card-body">
-    <table class="table table-hover table-bordered" id="Propertieslist">
-       <thead>
+    <table class="table table-striped table-bordered" id="Propertieslist">
+       <!-- <thead>
          <tr>
           <th scope="col">#</th>
           <th scope="col">Property Name</th>
@@ -72,7 +72,7 @@
             <td><small></small>{{row.propertyaddress.addressline1}},<br>{{row.propertyaddress.addressline2}},<br>{{row.propertyaddress.city}},<br>{{row.propertyaddress.state}}-{{row.propertyaddress.zipcode}}.</td>
             <td><button type="button" v-on:click="getUnitDetails(row.propertyID)" class="btn btn-outline-dark">View Details</button></td>
           </tr>
-        </tbody>
+        </tbody> -->
     </table>
   </div>
 </div>
@@ -110,22 +110,6 @@ methods:{
       let postdata = {'username':this.uname}
       let headers = {'Content-Type': 'application/json'}
       this.$http.post('https://paymyrent.herokuapp.com/api/v1/getUserdetails', postdata, headers).then(response => {
-       this.firstname = response.body.firstname
-       this.middlename = response.body.middlename
-       this.lastname = response.body.lastname
-       this.Paddress1 = response.body.physicaladdress.addressline1
-       this.Paddress2 = response.body.physicaladdress.addressline2
-       this.Pcity = response.body.physicaladdress.city
-       this.Pstate = response.body.physicaladdress.state
-       this.Pzip = response.body.physicaladdress.zipcode
-       this.Maddress1 = response.body.maillingaddress.addressline1
-       this.Maddress2 = response.body.maillingaddress.addressline1
-       this.Mcity = response.body.maillingaddress.city
-       this.Mstate = response.body.maillingaddress.state
-       this.Mzip = response.body.maillingaddress.zipcode
-       this.email = response.body.email
-       this.cphone = response.body.mobilephone
-       this.hphone = response.body.homephone
        this.properties = response.body.Properties
        this.loading = false
        this.opacity = 'opacity: 1.0;'
@@ -170,9 +154,16 @@ created: function(){
       this.uname = this.$localStorage.get('username')
       if(this.uname===null){
          this.$router.push({ path: '/'})
-      }else{
-        this.getPropetiesList()
       }
+      else{
+      this.getPropetiesList()
+      $(document).ready(function() {
+        $('#Propertieslist').DataTable( {
+        data:this.properties,
+        columns: [{ title: "Name" },{ title: "Position" },{ title: "Office" }]
+        });
+      });
+    }
   }
 }
 </script>

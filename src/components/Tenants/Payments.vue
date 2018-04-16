@@ -10,9 +10,10 @@
           </div>
   </div>
   <br>
-    <div class="card text-left">
-    <div class="card-header text-left"><h5><strong>Payment History</strong></h5></div>
-     <table class="table table-hover">
+  <div class="card text-left">
+    <div class="card-header"><h5><strong>Payment History</strong></h5></div>
+    <div class="card-body">
+     <table class="table table-striped table-bordered" id="PaymentsHistory">
        <thead>
          <tr>
           <th scope="col">#</th>
@@ -30,8 +31,16 @@
           <td>$1,021.50</td>
           <td>02/02/2018</td>
         </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Expense</td>
+          <td>Credit Card</td>
+          <td>$1,021.50</td>
+          <td>02/02/2018</td>
+        </tr>
       </tbody>
     </table>
+    </div>
 </div>
 </div> 
 </template>
@@ -43,13 +52,21 @@ export default {
        uname:''
      }
   },
+  mounted:function(){
+    $(document).ready(function() {
+      $('#PaymentsHistory').DataTable();
+    });
+  },
    created: function(){
       this.uname = this.$localStorage.get('username')
       if(this.uname===null){
          this.$router.push({ path: '/'})
-      }else{
-
       }
-  }
+   }
 }
 </script>
+<style>
+#PaymentsHistory{
+  width: 100%;
+}
+</style>
