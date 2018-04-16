@@ -47,41 +47,42 @@
             <hr>
             <form id="CreatePropertyForm">
               <div class="form-row">
-                <div class="form-group col-6">
-                  <label for="PName">Proptery Name</label>
-                  <input type="text" class="form-control" id="PName" placeholder="Proptery Name" v-model="PName" required>
-                </div>
-                <div class="form-group col-6">
-                  <label for="PType">Proptery Type</label>
-                  <input type="text" class="form-control" id="PType" placeholder="Proptery Type" v-model="PType" required>
-                </div>
                   <div class="form-group col-6">
                     <label for="PAddress1">Address</label>
-                    <input type="text" class="form-control" id="PAddress1" placeholder="1234 Main St" v-model="PAddress1" required>
+                    <input type="text" class="form-control" id="PAddress1" placeholder="1234 Main St" v-model="addressLine1" disabled>
                   </div>
                   <div class="form-group col-6">
                     <label for="PAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="PAddress2" placeholder="Apartment, studio, or floor" v-model="PAddress2" required>
+                    <input type="text" class="form-control" id="PAddress2" placeholder="Apartment, studio, or floor" v-model="addressLine2" disabled>
                   </div>
                     <div class="form-group col-4">
                       <label for="PCity">City</label>
-                      <input type="text" class="form-control" id="PCity" v-model="PCity" required>
+                      <input type="text" class="form-control" id="PCity" v-model="city" disabled>
                     </div>
                     <div class="form-group col-4">
                       <label for="PState">State</label>
-                      <input type="text" class="form-control" id="PState" v-model="PState" required>
+                      <input type="text" class="form-control" id="PState" v-model="state" disabled>
                     </div>
                     <div class="form-group col-4">
                       <label for="PZip">Zip</label>
-                      <input type="text" class="form-control" id="PZip" v-model="PZip" required>
+                      <input type="text" class="form-control" id="PZip" v-model="zip" disabled>
                     </div>
-                  <div class="form-group col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">I would like to add new property</label>
+                    <div class="form-group col-4">
+                      <label for="requestType">Maintenance Requests Type</label>
+                      <select class="custom-select" id="requestType">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                     </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary active" v-on:click="addProperty(PName,PType,PAddress1,PAddress2,PCity,PState,PZip)">Create</button>
+                    <div class="form-group col-8"></div>
+                    <div class="form-group col-4">
+                      <label for="Comments">Comments</label>
+                      <textarea type="text" class="form-control" id="Comments" placeholder="Comments" v-model="PName" rows="5" required></textarea>
+                    </div>
+                  <div class="form-group col-8"></div>
+                  <button type="submit" class="btn btn-primary active">submit</button>
               </div>
             </form>
           </div>
