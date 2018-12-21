@@ -9,7 +9,7 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img class="d-block w-100 images" src="../assets/image3.jpg" alt="First slide">
+                        <div class="carousel-item active"><img class="d-block w-100 images" src="https://xoxotest.s3.amazonaws.com/Screen%20Shot%202018-12-20%20at%202.26.47%20PM.png" alt="First slide">
                           <div class="carousel-caption d-none d-md-block text-left">
                               <h5>Easy Management</h5>
                               <small>When I first brought my cat home from the humane society she was a mangy, pitiful animal. It cost a lot to adopt her: forty dollars. And then I had to buy litter, a litterbox, food, and dishes for her to eat out of. Two days after she came home with me she got taken to the pound by the animal warden. There's a leash law for cats in Fort Collins. If they're not in your yard they have to be on a leash. Anyway, my cat is my best friend. I'm glad I got her. She sleeps under the covers with me when it's cold. Sometimes she meows a lot in the middle of the night and wakes me up, though. </small>
